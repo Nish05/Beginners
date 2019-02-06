@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!---Ng-app is required to use angularjs-->
+<html ng-app="">
+
+  <!---Ng-app is required to use angularjs-->
+  <head>
+    <script data-require="angular.js@" data-semver="1.3.0-beta.5" src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-controller="MainController">
+    <h1>{{message}}</h1>
+    {{message.length}}
+    
+    <div>
+      <div>First Name: {{person.firstName}}</div>
+      <div>Last Name: {{person.lastName}}</div>
+      <div>
+        <!--- Use ng-src instead of src to avoid the 404 error. The 404 error takes place because by the time binding of the angularjs component is done, the html directive assumes {{person.imageSrc}}  to be a url and searches first searches for it  -->
+        <img ng-src="{{person.imageSrc}}" title="{{person.firstName}} {{person.lastName}}"> 
+      </div>
+    </div>
+  </body>
+
+</html>
